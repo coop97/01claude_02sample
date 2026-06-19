@@ -28,7 +28,7 @@ export default function Login() {
     setServerError('')
     try {
       await signIn(values)
-      navigate(location.state?.from?.pathname || '/', { replace: true })
+      navigate('/login-success', { replace: true })
     } catch (err) {
       setServerError(err.message === 'Invalid login credentials' ? '이메일 또는 비밀번호가 올바르지 않습니다.' : err.message)
     }

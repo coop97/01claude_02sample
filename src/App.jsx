@@ -7,6 +7,7 @@ import AdminRoute from './routes/AdminRoute'
 import Home from './pages/Home'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
+import LoginSuccess from './pages/auth/LoginSuccess'
 import MyPage from './pages/mypage/MyPage'
 import NotFound from './pages/NotFound'
 
@@ -43,6 +44,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="login" element={<Login />} />
+            <Route path="login-success" element={<LoginSuccess />} />
             <Route path="signup" element={<Signup />} />
 
             <Route path="company" element={<CompanyLayout />}>
