@@ -23,7 +23,6 @@ export default function Signup() {
   const { signUp } = useAuth()
   const navigate = useNavigate()
   const [serverError, setServerError] = useState('')
-  const [done, setDone] = useState(false)
 
   const {
     register,
@@ -35,22 +34,10 @@ export default function Signup() {
     setServerError('')
     try {
       await signUp({ name, email, password })
-      setDone(true)
+      navigate('/signup-success', { replace: true })
     } catch (err) {
       setServerError(err.message)
     }
-  }
-
-  if (done) {
-    return (
-      <div className="mx-auto max-w-md px-4 py-section text-center">
-        <h1 className="mb-4 text-display-lg font-bold text-ink">가입이 완료되었습니다</h1>
-        <p className="mb-8 text-body-md text-body">이메일 인증 후 로그인해주세요.</p>
-        <Button onClick={() => navigate('/login')} className="w-full">
-          로그인으로 이동
-        </Button>
-      </div>
-    )
   }
 
   return (

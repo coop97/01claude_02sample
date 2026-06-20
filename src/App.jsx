@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Login from './pages/auth/Login'
 import Signup from './pages/auth/Signup'
 import LoginSuccess from './pages/auth/LoginSuccess'
+import SignupSuccess from './pages/auth/SignupSuccess'
 import MyPage from './pages/mypage/MyPage'
 import NotFound from './pages/NotFound'
 
@@ -46,6 +47,7 @@ export default function App() {
             <Route path="login" element={<Login />} />
             <Route path="login-success" element={<LoginSuccess />} />
             <Route path="signup" element={<Signup />} />
+            <Route path="signup-success" element={<SignupSuccess />} />
 
             <Route path="company" element={<CompanyLayout />}>
               <Route index element={<About />} />
